@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import GiftList from "./components/GiftList";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    items: [
+      {
+        id: 1,
+        title: "Coffee Machine",
+        taken: false
+      },
+      {
+        id: 2,
+        title: "Fridge",
+        taken: true
+      },
+      {
+        id: 3,
+        title: "Car",
+        taken: false
+      }
+    ]
+  };
+  render() {
+    return (
+      <div className="App">
+        <GiftList items={this.state.items} />
+      </div>
+    );
+  }
 }
-
 export default App;
