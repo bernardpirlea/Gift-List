@@ -4,7 +4,14 @@ import PropTypes from "prop-types";
 
 class GiftList extends React.Component {
   render() {
-    return this.props.items.map(item => <GiftItem key={item.id} item={item} />);
+    return this.props.items.map(item => (
+      <GiftItem
+        key={item.id}
+        item={item}
+        markTaken={this.props.markTaken}
+        deleteItem={this.props.deleteItem}
+      />
+    ));
   }
 }
 
